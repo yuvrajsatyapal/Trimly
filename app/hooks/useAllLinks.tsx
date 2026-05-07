@@ -1,6 +1,6 @@
 "use client"
 
-import { getAllLink } from "@/lib/utils/getAllLink";
+import { getAllLink } from "@/lib/utils/getAllLinks";
 import { useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 

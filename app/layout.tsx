@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider"
-import AuthSessionProvider from "@/components/SessionProvider"
+import { SiteHeader } from "@/components/landing/site-header";
+import { SiteFooter } from "@/components/landing/site-footer";
+import { AppProvider } from "@/components/AppProvider";
+import { ThemeProvider } from "@/components/theme-provider";
 
-
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,8 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trimly",
-  description: "A URL Shortner",
+  title: "ShortItOut - A URL Shortener",
+  description:
+    "A URL Shortener built with Next.js, Tailwind CSS, and TypeScript",
 };
 
 export default function RootLayout({
@@ -30,26 +35,30 @@ export default function RootLayout({
 }>) {
   return (
     <html
-  lang="en"
-  suppressHydrationWarning
-  className={cn(
-    "h-full",
-    "antialiased",
-    geistSans.variable,
-    geistMono.variable,
-    "font-mono",
-    jetbrainsMono.variable
-  )}
->
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-mono",
+        jetbrainsMono.variable
+      )}
+    >
       <body className="min-h-full flex flex-col">
         <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <AuthSessionProvider>{children}</AuthSessionProvider>
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppProvider>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </AppProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
