@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Copy } from "@phosphor-icons/react/dist/ssr";
 import { signIn, useSession } from "next-auth/react";
-import { useAllLink } from "../hooks/useAllLink";
+import { useAllLink } from "../hooks/useAllLinks";
 import type { Link as PrismaLink } from "@/lib/generated/prisma/browser";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";

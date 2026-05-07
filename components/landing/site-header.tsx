@@ -23,7 +23,7 @@ export function SiteHeader({ className }: { className?: string }) {
           href="/"
           className="text-lg font-bold tracking-tighter text-foreground"
         >
-          SHORTITOUT
+          TRIMLY
         </Link>
 
         {session ? (

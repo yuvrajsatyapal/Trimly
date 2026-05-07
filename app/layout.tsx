@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShortItOut - A URL Shortener",
+  title: "TRIMLY - A URL Shortener",
   description:
     "A URL Shortener built with Next.js, Tailwind CSS, and TypeScript",
 };

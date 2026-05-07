@@ -13,10 +13,10 @@ export function SiteFooter({ className }: { className?: string }) {
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 px-8 md:flex-row">
         <div className="flex flex-col gap-2">
           <div className="text-lg font-bold tracking-tighter text-foreground">
-            SHORTITOUT
+            TRIMLY
           </div>
           <div className="text-[9px] tracking-widest text-zinc-500 uppercase">
-            © {new Date().getFullYear()} SHORTITOUT INFRASTRUCTURE. OPEN SOURCE.
+            © {new Date().getFullYear()} TRIMLY INFRASTRUCTURE. OPEN SOURCE.
           </div>
         </div>
 
