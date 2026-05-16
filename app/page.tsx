@@ -152,8 +152,9 @@ export default function Home() {
               No tracking. No fluff.
             </h2>
             <p className="mx-auto mb-12 max-w-xl text-sm tracking-widest text-zinc-500 uppercase leading-relaxed">
-              Designed for minimalists who need reliable link management without
-              the overhead of enterprise marketing suites.
+              Manage links effortlessly with a tool designed
+              <br />
+              for clarity, not complexity.
             </p>
 
             <div className="flex items-center justify-center gap-8 text-zinc-600">

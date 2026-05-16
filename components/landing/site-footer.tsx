@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
 
 export function SiteFooter({ className }: { className?: string }) {
   return (
@@ -16,15 +17,35 @@ export function SiteFooter({ className }: { className?: string }) {
             TRIMLY
           </div>
           <div className="text-[9px] tracking-widest text-zinc-500 uppercase">
-            © {new Date().getFullYear()} TRIMLY INFRASTRUCTURE. OPEN SOURCE.
+            © {new Date().getFullYear()} TRIMLY. RELIABLE. FAST.
           </div>
         </div>
 
         <div className="flex items-center gap-4 text-zinc-500">
-          <span className="text-[10px] tracking-widest uppercase">Nodes:</span>
-          <span className="text-[10px] font-medium tracking-widest text-zinc-400 uppercase">
-            Stable
-          </span>
+          <span className="text-[10px] tracking-widest uppercase">Connect</span>
+
+          <div className="flex items-center gap-3 text-[10px] font-medium tracking-widest text-zinc-400">
+
+            <a
+              href="https://github.com/yuvrajsatyapal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 hover:text-white transition-colors"
+            >
+              <GithubLogo size={14} />
+              GitHub
+            </a>
+
+            <span className="text-zinc-600">·</span>
+
+            <a
+              href="mailto:yuvrajsatyapal21@gmial.com"
+              className="flex items-center gap-1 hover:text-white transition-colors"
+            >
+              <EnvelopeSimple size={14} />
+              Email
+            </a>
+          </div>
         </div>
       </div>
     </footer>

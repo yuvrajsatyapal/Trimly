@@ -51,19 +51,19 @@ export default function DashboardPage() {
         {/* 🔥 STATS */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="p-4 bg-zinc-900 border border-zinc-800 rounded">
-            <p className="text-sm text-zinc-500">Total Links</p>
+            <p className="text-sm text-zinc-500 mb-1">Total Links</p>
             <h3 className="text-xl font-bold">
               {allLinks?.length || 0}
             </h3>
           </div>
 
           <div className="p-4 bg-zinc-900 border border-zinc-800 rounded">
-            <p className="text-sm text-zinc-500">Total Clicks</p>
+            <p className="text-sm text-zinc-500 mb-1">Total Clicks</p>
             <h3 className="text-xl font-bold">{totalClicks}</h3>
           </div>
 
           <div className="p-4 bg-zinc-900 border border-zinc-800 rounded">
-            <p className="text-sm text-zinc-500">Active Links</p>
+            <p className="text-sm text-zinc-500 mb-1">Active Links</p>
             <h3 className="text-xl font-bold">
               {allLinks?.length || 0}
             </h3>
@@ -97,11 +97,6 @@ export default function DashboardPage() {
                   <p className="text-xs text-zinc-500 truncate">
                     {link.longUrl}
                   </p>
-                </div>
-
-                {/* CENTER */}
-                <div className="text-sm text-zinc-400 mr-15">
-                  {link.clicks || 0} clicks
                 </div>
 
                 {/* RIGHT ACTIONS */}
