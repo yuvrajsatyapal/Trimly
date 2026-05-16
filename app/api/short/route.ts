@@ -8,9 +8,11 @@ export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   const session = await auth()
+
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
+
   const { long_url } = await req.json()
   const isUrl = z.url().safeParse(long_url)
 
@@ -24,6 +26,7 @@ export async function POST(req: NextRequest) {
   }
 
   const short_url = nanoid(10)
+
   const link = await prisma.link.create({
     data: {
       longUrl: long_url,
@@ -41,18 +44,22 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   const session = await auth()
+
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
+
   const allLinks = await prisma.link.findMany({ where: { owner: { id: session.user.id } } })
   return NextResponse.json({ allLinks }, { status: 200 })
 }
 
 export async function DELETE(req: NextRequest) {
   const session = await auth()
+
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
+  
   const { short_url } = await req.json()
   await prisma.link.delete({ where: { shortUrl: short_url, owner: { id: session.user.id } } })
   return NextResponse.json({ message: "Link deleted successfully" }, { status: 200 })

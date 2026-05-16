@@ -76,3 +76,4 @@ model Link {
 
   @@index([userId])
 }
+
