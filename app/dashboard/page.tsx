@@ -44,20 +44,7 @@ export default function DashboardPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0e0e10] text-white">
-
-      {/* 🔥 NAVBAR */}
-      <div className="h-16 border-b border-zinc-800 flex items-center justify-between px-6 bg-zinc-950">
-        <h1 className="font-bold text-lg">Trimly</h1>
-
-        <Link
-          href="/"
-          className="bg-white text-black px-4 py-2 text-sm font-semibold rounded"
-        >
-          + Create Link
-        </Link>
-      </div>
-
+    <div className="min-h-screen bg-[#0e0e10] text-white pt-15">
       {/* 🔥 MAIN */}
       <div className="p-8 max-w-7xl mx-auto">
 
@@ -100,10 +87,10 @@ export default function DashboardPage() {
                 onClick={() =>
                   router.push(`/dashboard/${link.shortUrl}`)
                 }
-                className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 hover:bg-zinc-900 transition cursor-pointer"
+                className="flex items-center px-6 py-4 border-b border-zinc-800 hover:bg-zinc-900 transition cursor-pointer"
               >
                 {/* LEFT */}
-                <div className="max-w-[50%]">
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold">
                     {window.location.origin}/u/{link.shortUrl}
                   </p>
@@ -113,7 +100,7 @@ export default function DashboardPage() {
                 </div>
 
                 {/* CENTER */}
-                <div className="text-sm text-zinc-400">
+                <div className="text-sm text-zinc-400 mr-15">
                   {link.clicks || 0} clicks
                 </div>
 

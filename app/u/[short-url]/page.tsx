@@ -13,10 +13,15 @@ export default async function ShortUrlPage({
     notFound();
   }
 
-  await prisma.link.update({
-    where: { shortUrl },
-    data: { clicks: link.clicks + 1 },
-  });
-  
+  await Promise.all([
+    prisma.click.create({
+      data: { linkId: link.id },
+    }),
+    prisma.link.update({
+      where: { shortUrl },
+      data: { clicks: link.clicks + 1 },
+    }),
+  ]);
+
   return redirect(link.longUrl);
 }

@@ -65,15 +65,25 @@ model VerificationToken {
 }
 
 model Link {
-  id        String   @id @default(cuid())
-  longUrl   String
-  shortUrl  String   @unique() @db.VarChar(10)
-  clicks    Int      @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-  owner     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          String   @id @default(cuid())
+  longUrl     String
+  shortUrl    String   @unique() @db.VarChar(10)
+  clicks      Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  owner       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clickEvents Click[]
 
   @@index([userId])
 }
 
+model Click {
+  id        String   @id @default(cuid())
+  linkId    String
+  createdAt DateTime @default(now())
+  link      Link     @relation(fields: [linkId], references: [id], onDelete: Cascade)
+
+  @@index([linkId])
+  @@index([createdAt])
+}

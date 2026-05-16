@@ -46,14 +46,18 @@ export default function Home() {
           )}
         >
           <div className="z-10 mx-auto max-w-4xl text-center ">
-            <h1 className="mx-auto mb-6 max-w-3xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl">
+            <h1 className="mx-auto mb-6 max-w-3xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl text-center">
               <span className="bg-linear-to-b from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
-                SHORTEN YOUR LINKS, BROADEN YOUR REACH.
+                <span className="whitespace-nowrap">
+                  SHORTEN YOUR LINKS.
+                </span>
+                <br />
+                SCALE YOUR REACH.
               </span>
             </h1>
 
-            <p className="mx-auto mb-12 max-w-xl text-sm tracking-widest text-zinc-500 uppercase leading-relaxed md:text-base">
-              Enter long URL, make it short in seconds, share, unlimited free.
+            <p className="mx-auto mb-12 max-w-xl text-[11px] md:text-sm tracking-widest text-zinc-500 uppercase leading-relaxed">
+              Short links in seconds. Unlimited sharing. Zero hassle.
             </p>
 
             <div className="mx-auto flex w-full max-w-2xl flex-col gap-2 border border-zinc-800/70 bg-zinc-900/40 p-1.5 shadow-2xl sm:flex-row">
@@ -64,7 +68,7 @@ export default function Home() {
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder="https://very-long-url-to-be-shortened.com/xyz..."
-                  className="h-12 border-0 bg-transparent px-0 text-sm text-foreground placeholder:text-zinc-700 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  className="h-12 border-0 bg-transparent px-2 text-sm text-foreground placeholder:text-zinc-700 focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
               </div>
 

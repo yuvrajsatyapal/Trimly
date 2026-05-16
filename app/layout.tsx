@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "@/components/landing/site-header";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { AppProvider } from "@/components/AppProvider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SiteHeader } from "@/components/landing/site-header";
+import { SiteFooter } from "@/components/landing/site-footer";
+
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
